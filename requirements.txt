@@ -4,3 +4,4 @@ geopandas
 osmnx
 folium
 shapely
+gunicorn
