@@ -2,6 +2,7 @@ import pandas as pd
 import geopandas as gpd
 import osmnx as ox
 import folium
+import os
 from flask import Flask, request, render_template_string
 from shapely.ops import unary_union, linemerge
 from folium.plugins import MarkerCluster
@@ -14,7 +15,7 @@ LIGHT_FILE = "충청북도_옥천군_보안등정보.csv"
 CCTV_FILE = "CCTV정보_충북옥천군.csv"
 ACCIDENT_FILE = "옥천군_보행자교통사고다발지역_2021-2024.csv"
 
-VWORLD_KEY = "인증키"  # 기존에 사용하던 VWorld 인증키 입력
+VWORLD_KEY = os.environ.get("VWORLD_KEY", "")
 BUFFER_DISTANCE = 30
 ACCIDENT_DISTANCE = 100
 
